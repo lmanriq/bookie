@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book.service';
+import * as convert from 'xml-js';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,11 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.bookService.fetchBooks();
-    this.books = this.bookService.getBooks();
-    console.log(this.books)
+    this.bookService.fetchBooks().subscribe((data) => {
+      console.log("data", data)
+      this.books = data
+    });
+    
   }
 
 }
