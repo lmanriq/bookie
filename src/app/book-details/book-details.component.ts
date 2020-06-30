@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 import { BookDetailsService } from "../book-details.service";
+import * as convert from 'xml-js';
 
 @Component({
   selector: "app-book-details",
@@ -22,12 +23,10 @@ export class BookDetailsComponent implements OnInit {
   }
 
   getBook(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id)
-    this.bookDetailsService.fetchBook(id)
-      .subscribe(book => {
-        console.log(book)
-        this.book = book
-      })
+    const id = +this.route.snapshot.paramMap.get("id");
+    this.bookDetailsService.fetchBook(id).subscribe((book) => {
+      console.log(book);
+      this.book = book;
+    });
   }
 }
