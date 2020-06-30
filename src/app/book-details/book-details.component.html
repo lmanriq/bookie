@@ -1,9 +1,22 @@
 <div *ngIf="book">
   <h1>{{book.title._cdata}}</h1>
   <h2>{{book.authors.author.name._text}}</h2>
-  <img src="{{book.authors.author.image_url._cdata}}" alt="">
-  <img src="{{book.image_url._text}}" alt="">
+  <img src="{{book.authors.author.image_url._cdata}}" alt="{{book.authors.author.name._text}}" />
+  <img src="{{book.image_url._text}}" alt="{{book.title._cdata}} cover" />
   <p>{{book.description._cdata}}</p>
-  <p>Published: {{book.publication_month._text}}/{{book.publication_day._text}}/{{book.publication_year._text}}</p>
+  <p>
+    Published:
+    {{book.publication_month._text}}/{{book.publication_day._text}}/{{book.publication_year._text}}
+  </p>
   <p>Pages: {{book.num_pages._cdata}}</p>
+  <h2>Similar Books:</h2>
+  <article *ngFor="let book of similarBooks">
+    <a routerLink="/details/{{book.id._text}}">
+      <h1>{{book.title._text}} by {{book.authors.author.name._text}}</h1>
+      <img
+        src="{{book.image_url._cdata}}"
+        alt="{{book.title._text}} cover"
+      />
+    </a>
+  </article>
 </div>

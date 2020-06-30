@@ -11,6 +11,8 @@ import * as convert from 'xml-js';
 })
 export class BookDetailsComponent implements OnInit {
   book;
+  similarBooks;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +29,7 @@ export class BookDetailsComponent implements OnInit {
     this.bookDetailsService.fetchBook(id).subscribe((book) => {
       console.log(book);
       this.book = book;
+      this.similarBooks = book.similar_books.book;
     });
   }
 }
