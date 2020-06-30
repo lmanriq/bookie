@@ -1,5 +1,5 @@
 <div *ngIf="book">
-  <h1>{{book.title._cdata}}</h1>
+  <h1>{{book.title._cdata}} {{book.title._text}}</h1>
   <h2>{{book.authors.author.name._text}}</h2>
   <img src="{{book.authors.author.image_url._cdata}}" alt="{{book.authors.author.name._text}}" />
   <img src="{{book.image_url._text}}" alt="{{book.title._cdata}} cover" />
