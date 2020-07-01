@@ -10,13 +10,19 @@
   </p>
   <p>Pages: {{book.num_pages._cdata}}</p>
   <h2>Similar Books:</h2>
-  <article *ngFor="let book of similarBooks">
-    <a routerLink="/details/{{book.id._text}}">
-      <h1>{{book.title._text}} by {{book.authors.author.name._text}}</h1>
-      <img
-        src="{{book.image_url._cdata}}"
-        alt="{{book.title._text}} cover"
-      />
-    </a>
-  </article>
+  <div class="grid">
+    <article class="book-card" *ngFor="let book of similarBooks">
+      <a class="flex-row" routerLink="/details/{{book.id._text}}">
+        <img
+          src="{{book.image_url._cdata}}"
+          alt="{{book.title._text}} cover"
+        />
+        <div class="flex-column title-details">
+          <h1>{{book.title._text}} {{book.title._cdata}}</h1>
+          <h2>by {{book.authors.author.name._text}}</h2>
+          <img src="../assets/images/empty-heart.svg" alt="empty heart icon">
+        </div>
+      </a>
+    </article>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 <section>
-  <div class="home-container" *ngIf="books">
+  <div class="grid" *ngIf="books">
     <article class="book-card" *ngFor="let book of books">
       <a class="flex-row" routerLink="/details/{{book.best_book.id._text}}">
         <img

@@ -28,3 +28,39 @@ a {
   flex-direction: column;
   justify-content: center;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 3em;
+  margin: 0 3em;
+}
+
+.book-card {
+  height: 14em;
+  background-color: $light-blue;
+  border: 1px solid $purple;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px $purple;
+  img, a {
+    height: 100%;
+  }
+  img {
+    width: auto;
+    border-radius: 5px 0 0 5px;
+  }
+}
+
+.title-details {
+  padding: 0.5em;
+  justify-content: space-between;
+  height: 100%;
+  h2 {
+    font-size: 1em;
+  }
+  img {
+    height: 2em;
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+}
