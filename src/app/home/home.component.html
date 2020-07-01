@@ -1,13 +1,16 @@
 <section>
-  <h1>Books!</h1>
-  <div *ngIf="books">
-    <article *ngFor="let book of books">
-      <a routerLink="/details/{{book.best_book.id._text}}">
-        <h1>{{book.best_book.title._text}} by {{book.best_book.author.name._text}}</h1>
+  <div class="home-container" *ngIf="books">
+    <article class="book-card" *ngFor="let book of books">
+      <a class="flex-row" routerLink="/details/{{book.best_book.id._text}}">
         <img
           src="{{book.best_book.image_url._text}}"
           alt="{{book.best_book.title._text}} cover"
         />
+        <div class="flex-column title-details">
+          <h1>{{book.best_book.title._text}}</h1>
+          <h2>by {{book.best_book.author.name._text}}</h2>
+          <img src="../assets/images/empty-heart.svg" alt="empty heart icon">
+        </div>
       </a>
     </article>
   </div>
