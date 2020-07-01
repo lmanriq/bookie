@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "bookie"
+    }
+  },
+  "defaultProject": "bookie",
+  "cli": {
+    "analytics": false
+  }
 }

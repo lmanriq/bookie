@@ -19,10 +19,11 @@ export class BookService {
     return this.books;
   }
 
-  fetchBooks() {
+  fetchBooks(searchText:string='Douglas Adams') {
+    console.log(searchText)
     return this.http
       .get(
-        "https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?key=gVaqhjHYCZAaMbj0N03UQA&q=Douglas+Adams",
+        "https://cors-anywhere.herokuapp.com/https://www.goodreads.com/search/index.xml?key=gVaqhjHYCZAaMbj0N03UQA&q="+searchText,
         {
           responseType: "text",
         }
@@ -36,5 +37,6 @@ export class BookService {
         catchError(error=>{return throwError(error)})
       )
   }
+
 }
 
