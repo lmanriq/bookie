@@ -1,11 +1,13 @@
 <div class="flex-column" *ngIf="book">
   <section class="details-container flex-row">
     <div class="cover-container">
-      <img
-        class="cover-photo"
-        src="{{book.image_url._text}}"
-        alt="{{book.title._cdata}} cover"
-      />
+      <a href="{{book.link._cdata}}" target="_blank">        
+        <img
+          class="cover-photo"
+          src="{{book.image_url._text}}"
+          alt="{{book.title._cdata}} cover"
+        />
+      </a>
     </div>
     <div class="flex-column summary-container">
       <h1>{{book.title._cdata}} {{book.title._text}}</h1>
