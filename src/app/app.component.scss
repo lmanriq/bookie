@@ -1,3 +1,10 @@
+@import './scss/variables';
+
+header {
+  justify-content: space-between;
+  margin: 1em 3em 1em 3em;
+}
+
 .logo {
   height: 3em;
 }
@@ -9,4 +16,16 @@
 
 .title-box {
   margin: 0.4em 0 0.4em 1em;
+}
+
+.nav-list {
+  list-style-type: none;
+}
+
+.nav-link {
+  font-size: 1.5em;
+  padding: 0.5em;
+  background-color: $beige;
+  border: 1px solid $purple;
+  border-radius: 5px;
 }
