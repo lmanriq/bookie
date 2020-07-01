@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./app/scss/_variables.scss";
+
+* {
+  font-family: $font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  color: $purple;
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
