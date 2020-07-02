@@ -3,19 +3,24 @@
   <input
     type="search"
     class="form-control"
-    placeholder="search for books by author, title, ...etc"
-    [formControl]="searchField"
-  >
+    placeholder="New Search"
+    [formControl]="newSearchField"
+  />
   <button (click)="findBooks()">Search</button>
-  <button>Filter</button>
-  <div *ngIf = "books">
-    <article *ngFor = "let book of books">
-    <h1>{{book.best_book.title._text}}</h1>
-    <img src={{book.best_book.image_url._text}} alt="{{book.best_book.title._text}} cover">
-    
-    
+  <input
+    type="search"
+    class="form-control"
+    placeholder="Filter"
+    [formControl]="filterField"
+  />
+  <button (click)="filterBooks()">Filter</button>
+  <div *ngIf="books">
+    <article *ngFor="let book of filteredResults">
+      <h1>{{ book.best_book.title._text }}</h1>
+      <img
+        src="{{ book.best_book.image_url._text }}"
+        alt="{{ book.best_book.title._text }} cover"
+      />
     </article>
   </div>
-
 </section>
-

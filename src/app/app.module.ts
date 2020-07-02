@@ -5,13 +5,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import { SearchBarComponent } from './component/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchBarComponent
   ],
   imports: [
     BrowserModule,
